@@ -25,3 +25,50 @@ var cesar = new persona('Cesar', 'Lopez', 1.77)
 var juan = new persona('Juan', 'Obando', 1.81)
 cesar.soyAlto()
 juan.soyAlto()
+// Herencia
+// https://medium.com/@jmz12/usando-clases-en-javascript-e07f0e25c67d
+function Desarrollador(nombre, apellido, edad) {
+    this.claseBase(nombre, apellido, edad)
+}
+Desarrollador.prototype = Object.create(Persona.prototype) //Hereda los metodos
+Desarrollador.prototype.claseBase = Persona //Hereda el constructor
+Desarrollador.prototype.constructor = Desarrollador //Permite el uso de instanceof
+Desarrollador.prototype.saludar = function() { //Sobre escribe el metodo
+    console.log("Hola soy un desarrollador")
+    //opcionalmente
+    Persona.prototype.saludar.call(this) //Hace uso del metodo base
+}
+// Por clases
+class Persona {
+    constructor(nombre, altura, profesion) {
+        this.nombre = nombre;
+        this.altura = altura;
+        this.profesion = profesion;
+    }
+    fnEsAlto() {
+        var impr = this.nombre + " es un/a " + this.profesion
+        this.altura > 1.80 ? impr += " alto/a" : impr += " bajo/a";
+        console.log(impr);
+    }
+}
+class DesarrolladorextendsPersona {
+    constructor(nombre, altura, profesion) {
+        super(nombre, altura, profesion);
+    }
+}
+//desarrolladores
+var desarrollador1 = newDesarrollador("Jorge", 1.83, "desarrollador");
+var desarrollador2 = newDesarrollador("Luis", 1.85, "desarrollador");
+var desarrollador3 = newDesarrollador("Ángela", 1.78, "desarrollador");
+//otra profesión
+var persona1 = newPersona("Juan", 1.76, "ingeniero");
+var persona2 = newPersona("Lalo", 1.86, "doctor");
+var persona3 = newPersona("Roberto", 1.81, "dentista");
+var persona4 = newPersona("Ana", 1.64, "modelo");
+var persona5 = newPersona("Liz", 1.58, "cosmetóloga");
+//arreglo de objetos
+var arrPersonas = [persona1, persona2, persona3, persona4, persona5];
+var arrDesarrolladores = [desarrollador1, desarrollador2, desarrollador3];
+for (var i = 0; i < arrDesarrolladores.length; i++) arrDesarrolladores[i].fnEsAlto();
+console.log('\n');
+for (var i = 0; i < arrPersonas.length; i++) arrPersonas[i].fnEsAlto();

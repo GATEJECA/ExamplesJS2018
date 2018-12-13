@@ -31,10 +31,25 @@
 
 	Nota el paso de objetos y de array es por referencia
 	
-*/
 
+	Valores falsy (valores falsos) en Javascript:
+
+	false
+	0
+	null
+	""
+	undefined
+	NaN
+	Los demás  son verdaderos https://developer.mozilla.org/es/docs/Glossary/Truthy
+	*/
 //Con lo siguiente puedo poner varios mensajes en un console agrupado, y el tipo de letra lo cambio con color
 console.group();
 console.log('%c This course is the best! ', 'color: #43b207');
 console.log('%c Siempre se puede aprender algo nuevo', 'color: red');
 console.groupEnd();
+
+if (esDeDia) {
+    trabaja();
+}
+//Es lo mismo que:
+if (esDeDia) trabaja();
