@@ -27,7 +27,9 @@
 	var otraPersona = {
 	  ...josel
 	}
-	Los objetos contienen la misma info pero e
+	Los objetos contienen la misma info pero es diferente objeto
+
+	Nota el paso de objetos y de array es por referencia
 	
 */
 
