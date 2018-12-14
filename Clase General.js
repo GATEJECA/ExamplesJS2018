@@ -41,7 +41,23 @@
 	undefined
 	NaN
 	Los demás  son verdaderos https://developer.mozilla.org/es/docs/Glossary/Truthy
-	*/
+
+	en html si tengo un objeto dom
+	<div class="color celeste left cursor" data-color="celeste" id="celeste">
+	</div>
+
+	con un atributo que comienza con data-  el atributo se podrá obtener en el dataset
+	así 
+
+	Dataset{
+		color: "celeste"
+	}
+
+
+*/
+
+
+
 //Con lo siguiente puedo poner varios mensajes en un console agrupado, y el tipo de letra lo cambio con color
 console.group();
 console.log('%c This course is the best! ', 'color: #43b207');
