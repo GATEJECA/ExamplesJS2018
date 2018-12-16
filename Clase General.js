@@ -55,17 +55,23 @@
 
 
 */
-
-
-
 //Con lo siguiente puedo poner varios mensajes en un console agrupado, y el tipo de letra lo cambio con color
 console.group();
 console.log('%c This course is the best! ', 'color: #43b207');
 console.log('%c Siempre se puede aprender algo nuevo', 'color: red');
 console.groupEnd();
-
 if (esDeDia) {
     trabaja();
 }
 //Es lo mismo que:
 if (esDeDia) trabaja();
+// el primer codigo es el mismo que el segundo
+const nombre = persona.nombre;
+const apellido = persona.apellido;
+const edad = persona.edad;
+// 2
+const {
+    nombre,
+    apellido,
+    edad
+} = persona;
